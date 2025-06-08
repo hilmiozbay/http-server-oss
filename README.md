@@ -21,19 +21,6 @@ Bu proje, Python'un `socket` modülü kullanılarak geliştirilen çok iş parç
 | `/api/data`        | JPEG resmi döner (`static/marmara.jpg`) |
 | `/static/style.css`| CSS dosyasını döner                     |
 
-## Dosya Yapısı
-
-.
-├── README.md              # Proje açıklamaları
-├── LICENSE                # Lisans bilgisi
-├── CONTRIBUTING.md        # Katkı kuralları
-├── NOTICE.md              # Ek yasal bildirimler
-├── CODE_OF_CONDUCT.md     # Davranış kuralları
-├── Dockerfile             # Docker imajı için yapılandırma
-├── .dockerignore          # Docker build sırasında yoksayılacak dosyalar
-├── server.py              # Ana HTTP sunucu uygulaması
-├── routes/                # API veya yönlendirme dosyaları (şu an boş olabilir)
-└── static/                # Statik dosyalar (HTML, CSS, JS, görseller)
 
 ## Gereklilikler
 
