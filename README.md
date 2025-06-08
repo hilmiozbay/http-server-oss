@@ -1,21 +1,28 @@
-# HTTP Web Server
+# Basit Python HTTP Sunucusu
 
-A simple HTTP server implementation from scratch using Python's socket programming capabilities.
+Bu proje, Python'un `socket` modülü kullanılarak geliştirilen çok iş parçacıklı (multi-threaded) bir HTTP sunucusudur. Statik dosyalar (HTML, CSS, JS, resim) sunabilir, JSON API endpoint'leri sağlar ve temel MIME türlerini destekler. Uygulamada örnek olarak görsel gösterimi verilmiştir.
 
-## Features
+## Özellikler
 
-- Handles GET requests
-- Serves static files (HTML, CSS, JS) from `/static` directory
-- Provides JSON responses through `/api/hello` endpoint
-- Proper MIME type handling
-- Multi-threaded connection handling
-- Basic error handling (404, 500)
-- Docker containerization support
+- `GET` isteklerini işler
+- Statik dosya servis eder (`/static/`)
+- API endpoint’leri (`/api/hello`, `/api/data`)
+- MIME türü tanıma
+- Çoklu istemci desteği (threading)
+- Basit hata işleme (404, 500)
+- Resim gösterimi API üzerinden yapılabilir
 
-## Project Structure
+## 🧪 Örnek Endpoint'ler
 
-```
-/
+| Endpoint           | Açıklama                                |
+|--------------------|-------------------------------------    |
+| `/`                | `static/index.html` dosyasını döner     |
+| `/api/hello`       | JSON formatında mesaj döner             |
+| `/api/data`        | JPEG resmi döner (`static/marmara.jpg`) |
+| `/static/style.css`| CSS dosyasını döner                     |
+
+## Dosya Yapısı
+
 ├── README.md
 ├── LICENSE
 ├── CONTRIBUTING.md
@@ -26,40 +33,32 @@ A simple HTTP server implementation from scratch using Python's socket programmi
 ├── routes/
 ├── static/
 └── .dockerignore
-```
 
-## Requirements
+## Gereklilikler
 
 - Python 3.8+
 - Docker (for containerization)
 
-## Running the Server
+## Kurulum ve Çalıştırma
 
-### Local Development
+1. Projeyi klonlayın:
+```bash
+git clone https://github.com/hilmiozbay/http-server-oss.git
+cd note-app
+```
 
-1. Clone the repository
-2. Run the server:
-   ```bash
-   python server.py
-   ```
-3. Access the server at `http://localhost:8080`
+2. Uygulamayı başlatın:
+```bash
+docker-compose up
+```
 
-### Using Docker
+3. Tarayıcınızda http://localhost:8080 adresine gidin
 
-1. Build the Docker image:
-   ```bash
-   docker build -t http-server .
-   ```
-2. Run the container:
-   ```bash
-   docker run -p 8080:8080 http-server
-   ```
+## Docker Image
 
-## API Endpoints
+Docker Hub'dan direkt olarak image'ı çekebilirsiniz:
+```bash
+docker pull ozbayhilmi/http-sunucu-uygulama:latest
+```
 
-- `GET /api/hello` - Returns a JSON response
-- `GET /static/*` - Serves static files
-
-## License
-
-MIT License - See LICENSE file for details 
+Docker Hub Repository: https://hub.docker.com/repository/docker/ozbayhilmi/http-sunucu-uygulama
