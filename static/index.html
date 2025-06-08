@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>HTTP Server - Hilmi Özbay</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Hoş Geldiniz</h1>
+        <p>Bir takım gereksinimleri karşılamak için yazılmış bir HTTP server'ıdır.</p>
+        <div class="endpoint">
+            <h3>Endpoint'ler</h3>
+            <ul> 
+                <li><a href="/api/hello">/api/hello</a> -  JSON formatında bir yanıt döner</li>
+                <li><a href="/static/style.css">/static/style.css</a> - CSS dosyasını döner</li>
+                <li><a href="/api/data">/api/data</a> -  Örnek resim gösterir</li>
+            </ul>
+        </div>
+
+        <div class="endpoint">
+            <h3>Örnek Resim</h3>
+            <img src="/api/data" alt="Örnek Resim" style="max-width: 100%; height: auto;">
+        </div>
+
+        <div class="endpoint">
+            <h3>Özellikler</h3>
+            <ul>
+                <li>GET isteklerini işler</li>
+                <li>Statik dosyaları (HTML, CSS, JS) sunar</li>
+                <li>API endpointleri aracılığıyla JSON yanıtları sağlar</li>
+                <li>MIME türü işleme</li>
+                <li>Çoklu bağlantı işleme</li>
+                <li>Temel hata işleme (404, 500)</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html> 
